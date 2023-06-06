@@ -19,7 +19,7 @@ public class TextComponent extends AbstractTextComponent {
         for (int i = 0; i < componentListSize; i++) {
             resultArray[i] = componentList.get(i).operation();
         }
-        return String.join(" ", resultArray);
+        return String.join(componentType.getDelimiter(), resultArray);
     }
 
     @Override
