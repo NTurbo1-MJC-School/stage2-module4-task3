@@ -14,13 +14,11 @@ public class TextComponent extends AbstractTextComponent {
 
     @Override
     public String operation() {
-        String str = "";
-
-        componentList.forEach(component -> {
-            str.concat(component.operation());
-        });
-
-        return str + getComponentType().getDelimiter();
+        StringBuilder result = new StringBuilder();
+        for (AbstractTextComponent component : componentList) {
+            result.append(component.operation());
+        }
+        return result.toString();
     }
 
     @Override
@@ -37,6 +35,6 @@ public class TextComponent extends AbstractTextComponent {
 
     @Override
     public int getSize() {
-        return size + getComponentType().getDelimiter().length();
+        return size;
     }
 }

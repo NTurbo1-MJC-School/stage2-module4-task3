@@ -6,12 +6,13 @@ public class SymbolLeaf extends AbstractTextComponent {
 
     // Write your code here!
 
-    public SymbolLeaf(TextComponentType componentType) {
-        super(componentType);
+    public SymbolLeaf(char val) {
+        super(TextComponentType.SYMBOL);
+        this.value = val;
     }
     @Override
     public String operation() {
-        return value + getComponentType().getDelimiter();
+        return Character.toString(value);
     }
 
     @Override
@@ -26,6 +27,6 @@ public class SymbolLeaf extends AbstractTextComponent {
 
     @Override
     public int getSize() {
-        return 1 + getComponentType().getDelimiter().length();
+        return 1;
     }
 }
